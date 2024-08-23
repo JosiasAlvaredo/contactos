@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css'
 
 function App() {
   const [nombre, setNombre] = useState('');
@@ -24,30 +25,41 @@ function App() {
   };
 
   return (
+    <div className="App">
     <div>
       <form onSubmit={handleSubmit}>
+        <p className='input'>
+        Nombre:
+        </p>
         <label>
-          Nombre:
           <input type="text" value={nombre} onChange={(event) => setNombre(event.target.value)} />
         </label>
         <br />
+        <p className='input'>
+        Apellido:
+        </p>
         <label>
-          Apellido:
           <input type="text" value={apellido} onChange={(event) => setApellido(event.target.value)} />
         </label>
         <br />
+        <p className='input'>
+        Edad:
+        </p>
         <label>
-          Edad:
           <input type="number" value={edad} onChange={(event) => setEdad(event.target.value)} />
         </label>
         <br />
+        <p className='input'>
+        Telefono:
+        </p>
         <label>
-          Teléfono:
           <input type="tel" value={telefono} onChange={(event) => setTelefono(event.target.value)} />
         </label>
         <br />
-        <button type="submit">Agregar persona</button>
+        <button type="submit">Agregar</button>
       </form>
+    </div>
+    <div>
       <table id="tabla-personas">
         <thead>
           <tr>
@@ -72,6 +84,7 @@ function App() {
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 }
