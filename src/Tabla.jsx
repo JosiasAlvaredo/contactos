@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Tabla = ({ personas, handleEliminar }) => {
+  console.log(personas);
   return (
     <table id="tabla-personas">
       <thead>

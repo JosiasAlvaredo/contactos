@@ -6,24 +6,37 @@ import Header from './Header';
 
 function App() {
   const [personas, setPersonas] = useState([]);
+  const [formData, setFormData] = useState({ nombre: '', apellido: '', edad: '', telefono: '' });
 
   const handleSubmit = (event) => {
+    console.log('handleSubmit se está ejecutando');
     event.preventDefault();
-    const nuevaPersona = { nombre, apellido, edad, telefono };
+    const nuevaPersona = { ...formData };
     setPersonas([...personas, nuevaPersona]);
+    setFormData({ nombre: '', apellido: '', edad: '', telefono: '' });
   };
 
   const handleEliminar = (index) => {
-    const nuevasPersonas = [...personas];
-    nuevasPersonas.splice(index, 1);
-    setPersonas(nuevasPersonas);
+    console.log('handleEliminar se está ejecutando');
+    setPersonas(personas.filter((persona, i) => i !== index));
   };
+
+  const handleInputChange = (event) => {
+    console.log('handleInputChange se está ejecutando');
+    const { name, value } = event.target;
+    setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
+  };
+
 
   return (
     <div className="App">
       <Header />
       <div>
-        <Formulario handleSubmit={handleSubmit} />
+        <Formulario
+          handleSubmit={handleSubmit}
+          handleInputChange={handleInputChange}
+          formData={formData}
+        />
       </div>
       <div>
         <Tabla personas={personas} handleEliminar={handleEliminar} />
