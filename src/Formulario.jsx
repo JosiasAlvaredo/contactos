@@ -33,6 +33,7 @@ const Formulario = ({ handleSubmit, handleInputChange, formData }) => {
                         name="edad" 
                         value={formData.edad} 
                         onChange={handleInputChange} 
+                        min = "0"
                     />
                 </div>
                 <div className='input'>

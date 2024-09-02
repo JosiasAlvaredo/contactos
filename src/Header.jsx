@@ -1,6 +1,7 @@
 import React from 'react';
 import '@picocss/pico';
 import logo from './assets/logo.png';
+import './index.css'
 
 function Header() {
     return (
@@ -9,10 +10,22 @@ function Header() {
                 src={logo}
                 alt="Logo"
                 style={{
-                    width: 25,
-                    height: 25,
+                    width: 75,
+                    height: 75,
                 }}
             />
+            <div>
+                <input
+                    type="text"
+                    placeholder="Buscar..."
+                    readOnly={false}
+                    style={{ 
+                        float: 'right',
+                        marginTop: '3%',
+                        marginRight: '3%'
+                    }}                
+                />
+            </div>
         </nav>
     );
 }

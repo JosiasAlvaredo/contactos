@@ -3,15 +3,15 @@ import React from 'react';
 const Tabla = ({ personas, handleEliminar }) => {
   console.log(personas);
   return (
-    <table id="tabla-personas">
+    <table id="tabla-personas" className='tabla'>
       <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Edad</th>
-          <th>Teléfono</th>
-          <th>Acción</th>
-        </tr>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Acción</th>
+      </tr>
       </thead>
       <tbody id="tbody-personas">
         {personas.map((persona, index) => (
