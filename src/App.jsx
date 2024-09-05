@@ -68,6 +68,9 @@ function App() {
       <div>
         <Tabla personas={personas} handleEliminar={handleEliminar} />
       </div>
+      <div>
+        <footer />
+      </div>
     </div>
   );
 }
